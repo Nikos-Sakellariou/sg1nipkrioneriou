@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T11:38:44.1315390+02:00",
+  "title": "Design System: 1ο Νηπιαγωγείο Κρυονερίου",
+  "extensions": {
+    "colorMeta": {
+      "forest-ink": {
+        "role": "neutral",
+        "displayName": "Forest Ink",
+        "canonical": "#073f34",
+        "tonalRamp": ["oklch(15% 0.035 168)", "oklch(25% 0.055 168)", "oklch(36% 0.07 168)", "oklch(48% 0.075 168)", "oklch(61% 0.065 168)", "oklch(73% 0.05 168)", "oklch(85% 0.025 168)", "oklch(95% 0.01 168)"]
+      },
+      "association-green": {
+        "role": "primary",
+        "displayName": "Association Green",
+        "canonical": "#0b5d4b",
+        "tonalRamp": ["oklch(15% 0.04 167)", "oklch(26% 0.07 167)", "oklch(38% 0.09 167)", "oklch(50% 0.1 167)", "oklch(62% 0.09 167)", "oklch(74% 0.065 167)", "oklch(86% 0.035 167)", "oklch(95% 0.012 167)"]
+      },
+      "forest-deep": {
+        "role": "primary",
+        "displayName": "Forest Deep",
+        "canonical": "#032b24",
+        "tonalRamp": ["oklch(15% 0.03 169)", "oklch(24% 0.05 169)", "oklch(35% 0.07 169)", "oklch(47% 0.075 169)", "oklch(60% 0.065 169)", "oklch(73% 0.05 169)", "oklch(85% 0.025 169)", "oklch(95% 0.01 169)"]
+      },
+      "cool-paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f7f9f8",
+        "tonalRamp": ["oklch(15% 0.006 160)", "oklch(27% 0.008 160)", "oklch(40% 0.009 160)", "oklch(54% 0.01 160)", "oklch(68% 0.009 160)", "oklch(80% 0.007 160)", "oklch(90% 0.004 160)", "oklch(98% 0.002 160)"]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Paper Deep",
+        "canonical": "#e7f0eb",
+        "tonalRamp": ["oklch(15% 0.012 160)", "oklch(27% 0.018 160)", "oklch(40% 0.022 160)", "oklch(54% 0.025 160)", "oklch(68% 0.022 160)", "oklch(80% 0.017 160)", "oklch(90% 0.01 160)", "oklch(96% 0.005 160)"]
+      },
+      "sky-blue": {
+        "role": "secondary",
+        "displayName": "Sky Blue",
+        "canonical": "#36a8d8",
+        "tonalRamp": ["oklch(15% 0.045 230)", "oklch(27% 0.08 230)", "oklch(40% 0.12 230)", "oklch(54% 0.15 230)", "oklch(67% 0.14 230)", "oklch(78% 0.1 230)", "oklch(88% 0.055 230)", "oklch(95% 0.02 230)"]
+      },
+      "notice-yellow": {
+        "role": "secondary",
+        "displayName": "Notice Yellow",
+        "canonical": "#f5bd2f",
+        "tonalRamp": ["oklch(15% 0.04 84)", "oklch(28% 0.08 84)", "oklch(42% 0.13 84)", "oklch(56% 0.17 84)", "oklch(70% 0.18 84)", "oklch(81% 0.14 84)", "oklch(90% 0.075 84)", "oklch(96% 0.025 84)"]
+      },
+      "warm-coral": {
+        "role": "tertiary",
+        "displayName": "Warm Coral",
+        "canonical": "#f06455",
+        "tonalRamp": ["oklch(15% 0.045 30)", "oklch(27% 0.09 30)", "oklch(40% 0.14 30)", "oklch(54% 0.19 30)", "oklch(67% 0.18 30)", "oklch(78% 0.13 30)", "oklch(88% 0.07 30)", "oklch(95% 0.025 30)"]
+      },
+      "soft-sage": {
+        "role": "tertiary",
+        "displayName": "Soft Sage",
+        "canonical": "#b9d9c8",
+        "tonalRamp": ["oklch(15% 0.025 157)", "oklch(27% 0.04 157)", "oklch(40% 0.055 157)", "oklch(54% 0.065 157)", "oklch(67% 0.06 157)", "oklch(78% 0.05 157)", "oklch(88% 0.03 157)", "oklch(95% 0.012 157)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Opening statement only; compact, oversized, and tightly wrapped." },
+      "headline": { "displayName": "Headline", "purpose": "Major section introductions with close leading." },
+      "title": { "displayName": "Title", "purpose": "School facts, announcement titles, and short statements." },
+      "body": { "displayName": "Body", "purpose": "Primary reading copy with open leading and restrained measures." },
+      "label": { "displayName": "Label", "purpose": "Navigation, dates, form labels, tabs, and honesty markers." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state-quick", "value": "200ms ease-out", "purpose": "Button lift and color response." },
+      { "name": "preview-swap", "value": "240ms ease-out", "purpose": "Announcement-row emphasis and preview crossfade." },
+      { "name": "paper-enter", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Staggered folder-sheet entrance." },
+      { "name": "reveal", "value": "650ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Small vertical content reveal; removed under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "560px" },
+      { "name": "stacked", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The standard forest-green paper-strip action for major calls to action.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Δείτε τις ανακοινώσεις</button>",
+      "css": ".ds-btn-primary { display:inline-block; border:0; background:var(--green, #0b5d4b); color:var(--paper, #f7f9f8); padding:16px 28px; font-family:\"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; font-weight:700; clip-path:polygon(10% 0,100% 0,90% 100%,0 100%); cursor:pointer; transition:transform .2s ease-out, background .2s ease-out; } .ds-btn-primary:hover { transform:translateY(-4px); background:var(--green-dark, #032b24); } .ds-btn-primary:focus-visible { outline:4px solid var(--yellow, #f5bd2f); outline-offset:4px; } .ds-btn-primary:active { transform:translateY(-1px); }"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "A reversed action for use on Association Green or other dark forest surfaces.",
+      "html": "<button class=\"ds-btn-light\" type=\"button\">Άνοιγμα χάρτη</button>",
+      "css": ".ds-btn-light { display:inline-block; border:0; background:var(--paper, #f7f9f8); color:var(--green-dark, #032b24); padding:16px 28px; font-family:\"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; font-weight:700; clip-path:polygon(10% 0,100% 0,90% 100%,0 100%); cursor:pointer; transition:transform .2s ease-out, background .2s ease-out; } .ds-btn-light:hover { transform:translateY(-4px); background:var(--paper-deep, #e7f0eb); } .ds-btn-light:focus-visible { outline:4px solid var(--yellow, #f5bd2f); outline-offset:4px; } .ds-btn-light:active { transform:translateY(-1px); }"
+    },
+    {
+      "name": "Contact Navigation Tab",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "The clipped navigation action that distinguishes contact from ordinary anchor links.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Κύρια πλοήγηση\"><a href=\"#school\">Σχολείο</a><a href=\"#association\">Σύλλογος</a><a class=\"ds-nav-action\" href=\"#contact\">Επικοινωνία</a></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:28px; color:var(--ink, #073f34); font-family:\"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; font-weight:500; } .ds-nav a { color:inherit; text-decoration:none; text-underline-offset:.2em; } .ds-nav a:hover { text-decoration:underline; } .ds-nav a:focus-visible { outline:4px solid var(--yellow, #f5bd2f); outline-offset:4px; } .ds-nav-action { background:var(--green, #0b5d4b); color:var(--paper, #f7f9f8) !important; padding:12px 24px; clip-path:polygon(12% 0,100% 0,88% 100%,0 100%); }"
+    },
+    {
+      "name": "Folder Tab",
+      "kind": "custom",
+      "refersTo": "folder-tab",
+      "description": "An overlapping construction-paper navigation sheet with a labeled trapezoid tab.",
+      "html": "<a class=\"ds-folder-tab\" href=\"#news\"><span>Νέα</span></a>",
+      "css": ".ds-folder-tab { position:relative; display:block; width:min(520px, 88vw); height:150px; margin-top:38px; background:var(--coral, #f06455); color:var(--green-dark, #032b24); text-decoration:none; font-family:\"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; font-weight:700; } .ds-folder-tab::before { content:\"\"; position:absolute; top:-38px; left:48%; width:180px; height:42px; background:inherit; clip-path:polygon(12% 0,88% 0,100% 100%,0 100%); } .ds-folder-tab span { position:absolute; z-index:1; top:-32px; left:52%; } .ds-folder-tab:hover { background:var(--yellow, #f5bd2f); } .ds-folder-tab:focus-visible { outline:4px solid var(--yellow, #f5bd2f); outline-offset:4px; }"
+    },
+    {
+      "name": "Announcement Row",
+      "kind": "custom",
+      "refersTo": "announcement-row",
+      "description": "The live index item that drives the announcement image preview and carries verified or sample status.",
+      "html": "<button class=\"ds-news-row\" type=\"button\" aria-pressed=\"true\"><span class=\"ds-news-thumb\" aria-hidden=\"true\"></span><span><strong>Η νέα ιστοσελίδα ετοιμάζεται</strong><small>Σύντομα εδώ θα βρίσκετε τις ανακοινώσεις του συλλόγου.</small></span><time datetime=\"2026-11-04\">04.11.2026</time></button>",
+      "css": ".ds-news-row { width:100%; display:grid; grid-template-columns:70px minmax(0,1fr) auto; align-items:center; gap:20px; padding:22px 0; border:0; border-bottom:2px solid rgba(7,63,52,.28); background:var(--yellow, #f5bd2f); color:var(--ink, #073f34); text-align:left; font-family:\"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; cursor:pointer; transition:opacity .24s ease-out, transform .24s ease-out; } .ds-news-row:hover, .ds-news-row:focus-visible, .ds-news-row[aria-pressed=\"true\"] { transform:translateX(10px); } .ds-news-row:focus-visible { outline:4px solid var(--yellow, #f5bd2f); outline-offset:4px; box-shadow:0 0 0 6px var(--green-dark, #032b24); } .ds-news-row strong, .ds-news-row small { display:block; } .ds-news-row small { margin-top:4px; font-size:.875rem; line-height:1.35; } .ds-news-row time { font-size:.8125rem; font-weight:700; } .ds-news-thumb { width:64px; height:64px; background:var(--blue, #36a8d8); clip-path:polygon(50% 0,100% 62%,50% 100%,0 62%); }"
+    },
+    {
+      "name": "Leaf Image Frame",
+      "kind": "card",
+      "refersTo": "leaf-frame",
+      "description": "The signature pointed image silhouette used for previews and community artwork.",
+      "html": "<figure class=\"ds-leaf-frame\"><div class=\"ds-leaf-art\" role=\"img\" aria-label=\"Χάρτινη εικονογράφηση\"></div><figcaption>Πρωτότυπη εικονογράφηση</figcaption></figure>",
+      "css": ".ds-leaf-frame { position:relative; width:min(420px, 86vw); aspect-ratio:1; margin:0; overflow:hidden; background:var(--green, #0b5d4b); clip-path:polygon(50% 0,96% 40%,82% 84%,50% 100%,18% 84%,4% 40%); } .ds-leaf-art { position:relative; width:100%; height:100%; background:var(--blue, #36a8d8); } .ds-leaf-art::before { content:\"\"; position:absolute; inset:38% 0 0; background:var(--paper-deep, #e7f0eb); clip-path:polygon(0 0,100% 24%,100% 100%,0 100%); } .ds-leaf-art::after { content:\"\"; position:absolute; inset:64% 0 0; background:var(--coral, #f06455); clip-path:polygon(0 18%,100% 0,100% 100%,0 100%); } .ds-leaf-frame figcaption { position:absolute; left:50%; bottom:8%; transform:translateX(-50%); padding:6px 10px; background:var(--paper, #f7f9f8); color:var(--green-dark, #032b24); white-space:nowrap; font:700 .8125rem/1.35 \"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; } .ds-leaf-frame:focus-within { outline:4px solid var(--yellow, #f5bd2f); outline-offset:4px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A square paper field with dark ink border and a high-visibility external focus state.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-email\">Email</label><input class=\"ds-field\" id=\"ds-email\" type=\"email\" placeholder=\"onoma@example.gr\">",
+      "css": ".ds-field-label { display:block; margin-bottom:6px; color:var(--green-dark, #032b24); font:700 .875rem/1.35 \"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; } .ds-field { width:100%; border:2px solid var(--green-dark, #032b24); border-radius:0; background:var(--paper, #f7f9f8); color:var(--ink, #073f34); padding:13px 14px; font:400 1.0625rem/1.55 \"Pilcrow Rounded\", \"Trebuchet MS\", sans-serif; caret-color:var(--coral, #f06455); } .ds-field:hover { background:var(--paper-deep, #e7f0eb); } .ds-field:focus-visible { outline:4px solid var(--yellow, #f5bd2f); outline-offset:4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Forest Noticeboard",
+    "overview": "The system feels like a school noticeboard assembled by hand at the edge of Kryoneri's forest: useful first, warm without sentimentality, and tactile without pretending to be physical paper. Cool paper grounds deep green ink while blue, yellow, coral, and sage behave like a small set of construction-paper sheets.\n\nIts signature is a pointed leaf geometry repeated with discipline across the wordmark, image masks, navigation tabs, controls, and small picture windows. The stacked-folder composition is a particularly expressive use of the system, while the underlying rules—flat color, clipped silhouettes, oversized rounded type, and honest content labeling—remain reusable on quieter pages.",
+    "keyCharacteristics": [
+      "Paper-flat color fields with crisp cut edges rather than conventional rounded cards.",
+      "One pointed leaf motif, scaled from icon to image frame.",
+      "Oversized Pilcrow Rounded headlines paired with calm, readable body copy.",
+      "Bright construction-paper accents anchored by forest green and cool paper.",
+      "Explicit labels distinguish verified facts, sample announcements, and unconfirmed association content."
+    ],
+    "rules": [
+      { "name": "The Construction-Paper Rule", "body": "Use each accent as one decisive sheet or tab; do not blend the palette into gradients.", "section": "colors" },
+      { "name": "The Yellow Focus Rule", "body": "Keyboard focus is always a four-pixel Notice Yellow outline with a four-pixel offset, including on already-yellow sections where a dark supporting edge may be added for contrast.", "section": "colors" },
+      { "name": "The One-Family Rule", "body": "Keep every typographic role in Pilcrow Rounded; hierarchy is created through scale, weight, measure, and leading.", "section": "typography" },
+      { "name": "The Tight-Headline Rule", "body": "Display and section headlines use close leading and negative tracking, but body copy never inherits those settings.", "section": "typography" },
+      { "name": "The Wide-Sheet Rule", "body": "Use the shared maximum canvas and fluid gutter for alignment, then break out only when a section is intentionally a full color sheet.", "section": "layout" },
+      { "name": "The Cut-Paper Depth Rule", "body": "Create depth with overlap, cropping, scale, and color adjacency; do not add soft ambient shadows to ordinary surfaces.", "section": "elevation" },
+      { "name": "The One-Motif Rule", "body": "Reuse the pointed leaf silhouette at different scales; do not introduce unrelated blobs, pills, circles, or decorative squiggles.", "section": "shapes" },
+      { "name": "The Crisp-Cut Rule", "body": "Clipped shapes have hard edges and flat fills. Border radii remain zero.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do treat the page as assembled sheets: use large color fields, overlaps, and clipped edges to build hierarchy.",
+      "Do preserve high contrast and the visible Notice Yellow focus treatment on every interactive element.",
+      "Do keep announcement rows, folder tabs, and mobile navigation operable by keyboard and touch.",
+      "Do label sample announcements and unverified association information in plain language at the point where it appears.",
+      "Do use original paper-cut imagery with truthful alt text that distinguishes illustration from documentary photography."
+    ],
+    "donts": [
+      "Don't replace the cut-paper system with rounded white cards, glass panels, gradients, or generic soft shadows.",
+      "Don't scatter all accent colors inside one small component; give each sheet or state one clear color role.",
+      "Don't add a second decorative motif or novelty typeface beside the pointed leaf and Pilcrow Rounded.",
+      "Don't present board members, events, association contact details, or institutional claims as verified until the content is confirmed.",
+      "Don't hide the live announcement preview or its selected state on small screens; reflow it above the index instead."
+    ]
+  }
+}
