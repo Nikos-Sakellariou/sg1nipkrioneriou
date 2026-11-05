@@ -161,6 +161,6 @@ form.addEventListener('submit', (event) => {
   const subject = encodeURIComponent(`Μήνυμα ιστοσελίδας από ${data.get('name')}`);
   const body = encodeURIComponent(`Όνομα: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`);
   status.textContent = 'Ανοίγει η εφαρμογή email προς τη σχολική μονάδα.';
-  const recipient = window.cmsSiteEmail || 'mail@nip-kryon.att.sch.gr';
+  const recipient = window.cmsSiteEmail || 'syllogosgoneon1nipkryoneriou@gmail.com';
   window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
 });
