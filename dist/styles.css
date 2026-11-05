@@ -145,7 +145,7 @@ h3 { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.15; }
 .footer-grid,.copyright { position:relative; z-index:2; width:min(100%,var(--max)); margin-inline:auto; }
 .footer-grid { display:grid; grid-template-columns:1.1fr 1fr 1fr .6fr; gap:48px; }
 .footer-grid h2 { margin-bottom:18px; font-size:1.25rem; }
-.footer-grid a { display:block; margin:8px 0; }
+.footer-grid a { display:block; margin:8px 0;  font-size: 0.8em; }
 .footer-grid .footer-link { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; margin:12px 0; }
 .footer-link svg { flex:0 0 auto; width:22px; height:22px; fill:currentColor; }
 .footer-link span { overflow-wrap:anywhere; font-size: 0.8em;}
