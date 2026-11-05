@@ -6,6 +6,7 @@
   --blue-dark:#075c75;
   --green:#5ee998;
   --green-dark:#075d42;
+  --pink:#ff6bbf;
   --ink:#202029;
   --paper:#fffdf8;
   --pattern:url("assets/kindergarten-pattern.webp");
@@ -57,7 +58,7 @@ h3 { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.15; }
 /* taste-skill-ignore: radial gradients draw the scalloped section edge, not a decorative fill. */
 .scallop-green { background:radial-gradient(circle at 26px -3px,transparent 29px,var(--green) 30px) 0 0/52px 38px repeat-x; } /* taste-skill-ignore */
 /* taste-skill-ignore: radial gradients draw the scalloped section edge, not a decorative fill. */
-.scallop-yellow { background:radial-gradient(circle at 26px -3px,transparent 29px,var(--yellow) 30px) 0 0/52px 38px repeat-x; } /* taste-skill-ignore */
+.scallop-pink { background:radial-gradient(circle at 26px -3px,transparent 29px,var(--pink) 30px) 0 0/52px 38px repeat-x; } /* taste-skill-ignore */
 
 .school { display:grid; grid-template-columns:1fr 1fr; gap:clamp(48px,7vw,110px); align-items:center; width:min(100%,var(--max)); margin-inline:auto; padding:135px var(--gutter) 155px; }
 .school-media { height:560px; margin:0; overflow:hidden; border-radius:20px; }
@@ -103,14 +104,14 @@ h3 { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.15; }
 .read-more { color:var(--coral-dark); font-weight:800; }
 .news-item:not(:has(.content-card-image)) { min-height:330px; }
 
-.activities { background:var(--yellow); }
+.activities { background:var(--pink); }
 .activity-grid { grid-template-columns:repeat(2,1fr); }
 .activity-card { min-height:420px; flex-direction:column; }
 .activity-card .content-card-image { width:100%; height:245px; }
 .activity-card time,.activity-card .sample-label { color:#795d00; }
 
 .detail-page { min-height:100svh; background:var(--green); }
-.detail-page.activity-detail { background:var(--yellow); }
+.detail-page.activity-detail { background:var(--pink); }
 .detail-site-header { display:flex; align-items:center; justify-content:space-between; gap:30px; min-height:100px; padding:14px var(--gutter); background:#fff; font-weight:800; }
 .detail-site-header img { width:150px; height:auto; }
 .detail-main { min-height:calc(100vh - 100px); }
