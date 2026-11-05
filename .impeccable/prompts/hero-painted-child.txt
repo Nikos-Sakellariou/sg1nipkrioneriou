@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: wide website hero for a Greek kindergarten parents association visual prototype
+Primary request: a joyful kindergarten-age child at a craft table, holding both hands up toward the camera with bright washable finger paint on the palms, warm authentic smile, playful creative energy
+Scene/backdrop: bright minimal classroom with a soft off-white wall and subtle out-of-focus paper crafts
+Style/medium: polished natural lifestyle photography, realistic skin and fabric texture, candid rather than commercial stock
+Composition/framing: wide 16:9 landscape; child positioned on the right half, generous clean negative space on the left for Greek headline text; hands clearly visible but not blocking the face
+Lighting/mood: soft daylight, cheerful, welcoming, safe and warm
+Color palette: coral, sunshine yellow, turquoise, leaf green and white accents
+Constraints: fully clothed child, age-appropriate school scene, no logos, no text, no watermark, no school identifiers, no other children, no uncanny hands, exactly five fingers per hand

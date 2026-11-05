@@ -1,127 +1,134 @@
 <!doctype html>
-<html lang="el">
+<html lang="el" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Η ενημερωτική σελίδα του Συλλόγου Γονέων και Κηδεμόνων του 1ου Νηπιαγωγείου Κρυονερίου.">
-  <meta name="theme-color" content="#0b5d4b">
-  <title>Σύλλογος Γονέων | 1ο Νηπιαγωγείο Κρυονερίου</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=pilcrow-rounded@400,500,700&display=swap" rel="stylesheet">
+  <meta name="description" content="Σύλλογος Γονέων και Κηδεμόνων 1ου Νηπιαγωγείου Κρυονερίου — ανακοινώσεις, δράσεις και στοιχεία επικοινωνίας.">
+  <meta name="theme-color" content="#ff6868">
+  <title>Σύλλογος Γονέων & Κηδεμόνων | 1ο Νηπιαγωγείο Κρυονερίου</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.className='js';</script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
 
-  <header class="site-header" data-reveal>
-    <a class="wordmark" href="#top" aria-label="Αρχική σελίδα">
-      <span class="wordmark-leaf" aria-hidden="true"></span>
-      <span>1ο Νηπιαγωγείο<br>Κρυονερίου</span>
+  <div class="top-strip">
+    <span data-cms="site_name">Σύλλογος Γονέων & Κηδεμόνων 1ου Νηπιαγωγείου Κρυονερίου</span>
+    <span>Επικοινωνία σχολείου: <a data-cms="phone" href="tel:+302108161811">210 816 1811</a></span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Αρχική σελίδα">
+      <span aria-hidden="true">
+        <img src="assets/syllogos-logo.png" width="150" alt="Χαρούμενο παιδί σε σχολική δραστηριότητα ζωγραφικής">
+	  </span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Μενού</button>
     <nav id="site-nav" aria-label="Κύρια πλοήγηση">
-      <a href="#school">Σχολείο</a>
-      <a href="#association">Σύλλογος</a>
-      <a href="#news">Νέα</a>
+      <a href="#school">Το σχολείο</a>
+      <a href="#association">Ο σύλλογος</a>
+      <a href="#news">Ανακοινώσεις</a>
       <a class="nav-action" href="#contact">Επικοινωνία</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title" data-reveal>Μαζί στο<br>Κρυονέρι</h1>
-        <p data-reveal>Ο Σύλλογος Γονέων &amp; Κηδεμόνων του 1ου Νηπιαγωγείου, σε μία σελίδα για όσα μας ενώνουν.</p>
-        <a class="button" href="#news" data-reveal>Δείτε τις ανακοινώσεις</a>
+        <h1 id="hero-title" data-cms="hero_title">Καλώς ήρθατε στην παρέα μας</h1>
+        <p><strong data-cms="school_name">1ο Νηπιαγωγείο Κρυονερίου</strong><br><span data-cms="hero_text">Μαζί για ένα σχολείο γεμάτο χαμόγελα, φροντίδα και δημιουργία.</span></p>
+        <a class="button" href="#school">Γνωρίστε μας</a>
       </div>
-
-      <div class="folder-stack" aria-label="Γρήγορη πλοήγηση">
-        <a class="folder folder-school" href="#school"><span>Σχολείο</span></a>
-        <a class="folder folder-association" href="#association"><span>Σύλλογος</span></a>
-        <a class="folder folder-news" href="#news"><span>Νέα</span></a>
-        <a class="folder folder-contact" href="#contact"><span>Επικοινωνία</span></a>
-        <figure class="folder-front">
-          <img src="assets/hero-kryoneri.png" width="1536" height="1024" alt="Χάρτινη εικονογράφηση σχολείου και δάσους στο Κρυονέρι· δεν απεικονίζει το πραγματικό σχολικό κτίριο">
-          <figcaption>Πρωτότυπη εικονογράφηση για τη σελίδα</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="intro" aria-labelledby="intro-title">
-      <h2 class="visually-hidden" id="intro-title">Η κοινότητά μας</h2>
-      <p data-reveal>
-        Γονείς <span class="inline-picture"><img src="assets/community-tree.png" alt="" width="256" height="170"></span>,
-        παιδιά και εκπαιδευτικοί <span class="inline-picture"><img src="assets/school-craft.png" alt="" width="256" height="170"></span>
-        φροντίζουμε μαζί μια σχολική καθημερινότητα με επικοινωνία, συμμετοχή και χαρά.
-      </p>
-    </section>
-
-    <section class="school-panel" id="school" aria-labelledby="school-title">
-      <div class="school-visual" data-reveal>
-        <h2 id="school-title">Το σχολείο μας</h2>
-        <figure class="leaf-image image-drift">
-          <img src="assets/school-craft.png" width="1456" height="1092" alt="Χάρτινη εικονογράφηση σχολικής χειροτεχνίας και τοπίου· όχι φωτογραφία του σχολείου">
-        </figure>
-      </div>
-      <div class="school-facts">
-        <article data-reveal>
-          <h3>Στο Κρυονέρι</h3>
-          <p>Το 1ο Νηπιαγωγείο Κρυονερίου βρίσκεται στην Αγίας Τριάδος &amp; Υψηλάντου, Τ.Κ. 14568.</p>
-        </article>
-        <article data-reveal>
-          <h3>Επικοινωνία σχολείου</h3>
-          <p><a href="tel:+302108161811">210 816 1811</a><br><a href="mailto:mail@nip-kryon.att.sch.gr">mail@nip-kryon.att.sch.gr</a></p>
-        </article>
-        <a class="button button-light" href="https://www.google.com/maps/search/?api=1&amp;query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%A4%CF%81%CE%B9%CE%AC%CE%B4%CE%BF%CF%82+%CE%BA%CE%B1%CE%B9+%CE%A5%CF%88%CE%B7%CE%BB%CE%AC%CE%BD%CF%84%CE%BF%CF%85+%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%AD%CF%81%CE%B9" target="_blank" rel="noopener">Άνοιγμα χάρτη</a>
-      </div>
-    </section>
-
-    <section class="association" id="association" aria-labelledby="association-title">
-      <div class="association-copy">
-        <h2 id="association-title" data-reveal>Όλοι γύρω από το παιδί</h2>
-        <p data-reveal>Ο Σύλλογος είναι ο κοινός χώρος των γονέων: ακούμε, προτείνουμε και συνεργαζόμαστε με το σχολείο για την καθημερινότητα των παιδιών.</p>
-        <p class="content-note" data-reveal><strong>Χρειάζεται επιβεβαίωση:</strong> εδώ μπορούν να προστεθούν το Διοικητικό Συμβούλιο, το καταστατικό και οι συγκεκριμένοι στόχοι του συλλόγου.</p>
-      </div>
-      <figure class="association-image leaf-image image-drift" data-reveal>
-        <img src="assets/community-tree.png" width="1456" height="1092" alt="Εικονογράφηση χεριών που συνθέτουν μαζί ένα πολύχρωμο χάρτινο δέντρο">
+      <figure class="hero-media">
+        <img data-cms-image="hero_image" src="assets/hero-painted-child.png" width="2048" height="1152" alt="Χαρούμενο παιδί σε σχολική δραστηριότητα ζωγραφικής">
+        <figcaption>Πρωτότυπη φωτογραφική σύνθεση για την ιστοσελίδα</figcaption>
       </figure>
+      <div class="scallop scallop-white" aria-hidden="true"></div>
     </section>
 
-    <section class="news" id="news" aria-labelledby="news-title">
-      <div class="section-heading" data-reveal>
-        <h2 id="news-title">Ανακοινώσεις</h2>
-        <p>Τα σημαντικά, χωρίς ψάξιμο. Επιλέξτε μία γραμμή για προεπισκόπηση.</p>
+    <section class="school" id="school" aria-labelledby="school-title">
+      <figure class="school-media" data-reveal>
+        <img src="assets/school-craft.png" width="1456" height="1092" alt="Χειροποίητη εικονογράφηση σχολείου και χειροτεχνιών· δεν απεικονίζει το πραγματικό κτίριο">
+      </figure>
+      <div class="school-copy" data-reveal>
+        <h2 id="school-title" data-cms="school_title">Το σχολείο μας</h2>
+        <p data-cms="school_text">Το <strong>1ο Νηπιαγωγείο Κρυονερίου</strong> βρίσκεται στην Αγίας Τριάδος & Υψηλάντου, Τ.Κ. 14568. Η σχολική κοινότητα ενώνει παιδιά, εκπαιδευτικούς και γονείς σε ένα περιβάλλον μάθησης και δημιουργίας.</p>
+        <dl class="school-facts">
+          <div><dt>Τηλέφωνο</dt><dd><a data-cms="phone" href="tel:+302108161811">210 816 1811</a></dd></div>
+          <div><dt>Email σχολείου</dt><dd><a data-cms="email" href="mailto:mail@nip-kryon.att.sch.gr">mail@nip-kryon.att.sch.gr</a></dd></div>
+        </dl>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%A4%CF%81%CE%B9%CE%AC%CE%B4%CE%BF%CF%82+%CE%BA%CE%B1%CE%B9+%CE%A5%CF%88%CE%B7%CE%BB%CE%AC%CE%BD%CF%84%CE%BF%CF%85+%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%AD%CF%81%CE%B9">Δείτε τον χάρτη</a>
       </div>
-      <div class="news-layout">
-        <div class="news-index" role="group" aria-label="Προεπισκόπηση ανακοινώσεων συλλόγου">
-          <button class="news-row is-active" type="button" aria-pressed="true" data-image="assets/noticeboard.png" data-alt="Χάρτινη εικονογράφηση πίνακα ανακοινώσεων">
-            <span class="news-thumb"><img src="assets/noticeboard.png" alt="" width="128" height="96"></span>
-            <span><strong>Η νέα ιστοσελίδα ετοιμάζεται</strong><small>Σύντομα εδώ θα βρίσκετε τις ανακοινώσεις του συλλόγου.</small></span>
-            <time datetime="2026-11-04">04.11.2026</time>
-          </button>
-          <button class="news-row" type="button" aria-pressed="false" data-image="assets/community-tree.png" data-alt="Χάρτινη εικονογράφηση συνεργασίας γονέων">
-            <span class="news-thumb"><img src="assets/community-tree.png" alt="" width="128" height="96"></span>
-            <span><strong>Θέλετε να προσθέσετε ένα νέο;</strong><small>Αντικαταστήστε αυτό το δοκιμαστικό κείμενο με την πρώτη πραγματική ανακοίνωση.</small></span>
-            <span class="demo-label">Δείγμα</span>
-          </button>
-          <button class="news-row" type="button" aria-pressed="false" data-image="assets/school-craft.png" data-alt="Χάρτινη εικονογράφηση σχολικής χειροτεχνίας">
-            <span class="news-thumb"><img src="assets/school-craft.png" alt="" width="128" height="96"></span>
-            <span><strong>Ημερολόγιο δράσεων</strong><small>Στη θέση αυτή μπορούν να εμφανίζονται εκδηλώσεις, συναντήσεις και χρήσιμα έγγραφα.</small></span>
-            <span class="demo-label">Δείγμα</span>
-          </button>
+    </section>
+
+    <section class="pattern-section people" aria-labelledby="people-title">
+      <div class="pattern-inner">
+        <h2 id="people-title" data-cms="people_title" data-reveal>Οι άνθρωποι του σχολείου</h2>
+        <p class="section-lead" data-cms="people_lead" data-reveal>Μία κοινότητα που φροντίζει κάθε παιδί.</p>
+        <div class="people-layout" data-reveal>
+          <div class="people-note">
+            <h3>Οι εκπαιδευτικοί</h3>
+            <p data-cms="teachers_text">Η επίσημη λίστα εκπαιδευτικών μπορεί να προστεθεί εδώ μόλις επιβεβαιωθούν τα στοιχεία της τρέχουσας σχολικής χρονιάς.</p>
+          </div>
+          <div class="people-note">
+            <h3>Οι οικογένειες</h3>
+            <p data-cms="families_text">Με επικοινωνία, συμμετοχή και συνεργασία στηρίζουμε τη σχολική καθημερινότητα και τις δράσεις των παιδιών.</p>
+          </div>
         </div>
-        <figure class="news-preview image-drift" aria-live="polite" data-reveal>
-          <img src="assets/noticeboard.png" width="1456" height="1092" alt="Χάρτινη εικονογράφηση πίνακα ανακοινώσεων">
-          <figcaption>Η εικόνα αλλάζει με την επιλογή σας</figcaption>
-        </figure>
       </div>
+      <div class="scallop scallop-blue" aria-hidden="true"></div>
+    </section>
+
+    <section class="pattern-section association" id="association" aria-labelledby="association-title">
+      <div class="pattern-inner association-grid">
+        <div data-reveal>
+          <h2 id="association-title" data-cms="association_title">Ο Σύλλογος</h2>
+          <p class="association-intro" data-cms="association_intro">Ο κοινός χώρος των γονέων για να ακούμε, να προτείνουμε και να συνεργαζόμαστε με το σχολείο.</p>
+          <div class="truth-note" data-cms="association_note"><strong>Χρειάζεται επιβεβαίωση:</strong> εδώ μπορούν να προστεθούν τα μέλη του Διοικητικού Συμβουλίου και το καταστατικό.</div>
+        </div>
+        <ul class="goals" data-cms-list="goals" data-reveal>
+          <li>Στηρίζουμε το εκπαιδευτικό έργο και τις ανάγκες της σχολικής μονάδας.</li>
+          <li>Ενισχύουμε τη συνεργασία ανάμεσα στο σχολείο και την οικογένεια.</li>
+          <li>Οργανώνουμε δράσεις που φέρνουν πιο κοντά τη σχολική κοινότητα.</li>
+          <li>Μεταφέρουμε προτάσεις και θέματα των γονέων με υπευθυνότητα.</li>
+        </ul>
+      </div>
+      <div class="scallop scallop-green" aria-hidden="true"></div>
+    </section>
+
+    <section class="pattern-section news" id="news" aria-labelledby="news-title">
+      <div class="pattern-inner">
+        <h2 id="news-title" data-cms="news_title" data-reveal>Ανακοινώσεις & νέα</h2>
+        <p class="section-lead" data-cms="news_lead" data-reveal>Όσα χρειάζεται να γνωρίζει η σχολική μας κοινότητα.</p>
+        <div class="news-grid" data-cms-list="announcements" aria-label="Ανακοινώσεις" data-reveal>
+          <article class="news-item">
+            <time datetime="2026-11-04">04 Νοεμβρίου 2026</time>
+            <h3>Η νέα ιστοσελίδα ετοιμάζεται</h3>
+            <p>Σύντομα εδώ θα δημοσιεύονται οι πραγματικές ανακοινώσεις του Συλλόγου.</p>
+            <span class="sample-label">Δείγμα περιεχομένου</span>
+          </article>
+          <article class="news-item">
+            <span class="sample-label">Δείγμα περιεχομένου</span>
+            <h3>Ημερολόγιο δράσεων</h3>
+            <p>Εκδηλώσεις, συναντήσεις, εκδρομές και χρήσιμα έγγραφα μπορούν να εμφανίζονται σε αυτή τη θέση.</p>
+          </article>
+          <article class="news-item">
+            <span class="sample-label">Δείγμα περιεχομένου</span>
+            <h3>Η πρώτη ανακοίνωση</h3>
+            <p>Αντικαταστήστε αυτό το κείμενο με τα νέα του Συλλόγου όταν είναι διαθέσιμα.</p>
+          </article>
+        </div>
+      </div>
+      <div class="scallop scallop-white" aria-hidden="true"></div>
     </section>
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-copy" data-reveal>
-        <h2 id="contact-title">Ας μιλήσουμε</h2>
-        <p>Το επίσημο email του συλλόγου δεν έχει ακόμη επιβεβαιωθεί. Για στοιχεία της σχολικής μονάδας μπορείτε προσωρινά να χρησιμοποιήσετε το σχολικό email.</p>
+        <h2 id="contact-title" data-cms="contact_title">Ας μιλήσουμε</h2>
+        <p data-cms="contact_text">Το επίσημο email του Συλλόγου δεν έχει ακόμη επιβεβαιωθεί. Μέχρι τότε, για στοιχεία της σχολικής μονάδας μπορείτε να χρησιμοποιήσετε το σχολικό email.</p>
       </div>
       <form id="contact-form" data-reveal>
         <label for="name">Όνομα</label>
@@ -129,39 +136,23 @@
         <label for="email">Email</label>
         <input id="email" name="email" type="email" autocomplete="email" required>
         <label for="message">Μήνυμα</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="5" required></textarea>
         <button type="submit">Άνοιγμα στο email</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-mark" aria-label="1ο Νηπιαγωγείο Κρυονερίου">
-      <span>1ο</span><span>Νηπιαγωγείο</span><span>Κρυονερίου</span>
-    </div>
+  <footer class="site-footer">
     <div class="footer-grid">
-      <div>
-        <h2>Πλοήγηση</h2>
-        <a href="#school">Σχολείο</a>
-        <a href="#association">Σύλλογος</a>
-        <a href="#news">Ανακοινώσεις</a>
-      </div>
-      <div>
-        <h2>Στοιχεία σχολείου</h2>
-        <p>Αγίας Τριάδος &amp; Υψηλάντου<br>14568 Κρυονέρι</p>
-        <a href="tel:+302108161811">210 816 1811</a>
-      </div>
-      <div>
-        <h2>Email</h2>
-        <a href="mailto:mail@nip-kryon.att.sch.gr">mail@nip-kryon.att.sch.gr</a>
-        <p>Το email ανήκει στη σχολική μονάδα.</p>
-      </div>
-      <a class="back-top" href="#top">Πάνω</a>
+      <div><h2>Επικοινωνία</h2><a data-cms="email" href="mailto:mail@nip-kryon.att.sch.gr">mail@nip-kryon.att.sch.gr</a><p>Το email ανήκει στη σχολική μονάδα.</p></div>
+      <div><h2>Χρήσιμοι σύνδεσμοι</h2><a href="#school">Το σχολείο</a><a href="#association">Ο Σύλλογος</a><a href="#news">Ανακοινώσεις</a></div>
+      <div><h2>Διεύθυνση</h2><p data-cms="address">Αγίας Τριάδος & Υψηλάντου<br>14568 Κρυονέρι</p><a href="#top">Επιστροφή πάνω</a></div>
+      <div><span>
+        <img src="assets/syllogos-logo.png" width="200" alt="Χαρούμενο παιδί σε σχολική δραστηριότητα ζωγραφικής"></span></div>
     </div>
-    <p class="copyright">© 2026 Σύλλογος Γονέων &amp; Κηδεμόνων 1ου Νηπιαγωγείου Κρυονερίου</p>
+    <p class="copyright" data-cms="copyright">© 2026 Σύλλογος Γονέων & Κηδεμόνων 1ου Νηπιαγωγείου Κρυονερίου</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

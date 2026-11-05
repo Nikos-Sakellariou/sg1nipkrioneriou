@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: seamless repeating website background pattern tile for colored sections of a Greek kindergarten parents association site
+Primary request: create an original seamless tile of playful early-childhood school doodles: crayons, pencils, open books, alphabet blocks, simple smiling sun, small rainbow, kite, paper boat, apple, puzzle piece, paint palette, child-safe scissors, flowers and clouds
+Style/medium: clean hand-drawn monoline illustration, friendly imperfect classroom-marker line, professional vector-like clarity, inspired by kindergarten wall doodles but fully original
+Composition/framing: square seamless repeat tile; motifs distributed evenly with generous negative space; every edge must tile perfectly with its opposite edge; no central focal point
+Color palette: single muted deep turquoise line color on a genuinely transparent background
+Constraints: transparent PNG, seamless repeat, line art only, no fills, no children or faces except the simple sun, no words, no letters except abstract ABC-style block shapes without readable text, no logos, no watermark, no border

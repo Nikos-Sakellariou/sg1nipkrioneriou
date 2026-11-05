@@ -1,0 +1,150 @@
+media:
+  input: dist/assets
+  output: /assets
+  rename: safe
+  categories: [image]
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "content: προσθήκη {path}"
+      update: "content: ενημέρωση {path}"
+      delete: "content: διαγραφή {path}"
+      rename: "content: μετονομασία {oldPath} σε {newPath}"
+
+content:
+  - name: site
+    label: Κείμενα ιστοσελίδας
+    type: file
+    path: dist/content/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: site_name
+        label: Πλήρης τίτλος Συλλόγου
+        type: string
+        required: true
+      - name: school_name
+        label: Όνομα σχολείου
+        type: string
+        required: true
+      - name: phone
+        label: Τηλέφωνο
+        type: string
+        required: true
+      - name: email
+        label: Email
+        type: string
+        required: true
+      - name: address
+        label: Διεύθυνση
+        type: text
+        required: true
+      - name: hero_title
+        label: Κεντρικός τίτλος
+        type: string
+        required: true
+      - name: hero_text
+        label: Κεντρικό κείμενο
+        type: text
+        required: true
+      - name: hero_image
+        label: Κεντρική εικόνα
+        type: image
+      - name: school_title
+        label: Τίτλος ενότητας σχολείου
+        type: string
+        required: true
+      - name: school_text
+        label: Κείμενο σχολείου
+        type: text
+        required: true
+      - name: people_title
+        label: Τίτλος κοινότητας
+        type: string
+        required: true
+      - name: people_lead
+        label: Υπότιτλος κοινότητας
+        type: string
+        required: true
+      - name: teachers_text
+        label: Κείμενο εκπαιδευτικών
+        type: text
+        required: true
+      - name: families_text
+        label: Κείμενο οικογενειών
+        type: text
+        required: true
+      - name: association_title
+        label: Τίτλος Συλλόγου
+        type: string
+        required: true
+      - name: association_intro
+        label: Εισαγωγή Συλλόγου
+        type: text
+        required: true
+      - name: association_note
+        label: Σημείωση Συλλόγου
+        type: text
+      - name: goals
+        label: Στόχοι και δράσεις
+        type: string
+        list: true
+      - name: news_title
+        label: Τίτλος ανακοινώσεων
+        type: string
+        required: true
+      - name: news_lead
+        label: Υπότιτλος ανακοινώσεων
+        type: string
+        required: true
+      - name: contact_title
+        label: Τίτλος επικοινωνίας
+        type: string
+        required: true
+      - name: contact_text
+        label: Κείμενο επικοινωνίας
+        type: text
+        required: true
+      - name: copyright
+        label: Copyright
+        type: string
+        required: true
+
+  - name: announcements
+    label: Ανακοινώσεις
+    type: file
+    path: dist/content/announcements.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: title
+        label: Τίτλος
+        type: string
+        required: true
+      - name: date
+        label: Ημερομηνία
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: Σύντομο κείμενο
+        type: text
+        required: true
+        options:
+          maxlength: 320
+      - name: label
+        label: Ετικέτα
+        type: string
+      - name: published
+        label: Δημοσιευμένη
+        type: boolean
+        required: true
+

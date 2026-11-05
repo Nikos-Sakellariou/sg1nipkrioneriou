@@ -13,7 +13,7 @@ for (const [width, height, name, isMobile] of [
 ]) {
   const context = await browser.newContext({ viewport: { width, height }, isMobile });
   const page = await context.newPage();
-  await page.goto('http://127.0.0.1:4173/', { waitUntil: 'networkidle' });
+  await page.goto('http://127.0.0.1:4174/dist/index.html', { waitUntil: 'networkidle' });
   await page.evaluate(async () => {
     await document.fonts.ready;
     scrollTo(0, document.documentElement.scrollHeight);
