@@ -124,6 +124,12 @@ content:
     operations:
       delete: false
     fields:
+      - name: slug
+        label: Σύντομο όνομα συνδέσμου
+        type: string
+        required: true
+        description: "Μόνο λατινικά πεζά γράμματα, αριθμοί και παύλες (π.χ. geniki-synelefsi)"
+        pattern: "^[a-z0-9-]+$"
       - name: title
         label: Τίτλος
         type: string
@@ -140,6 +146,73 @@ content:
         required: true
         options:
           maxlength: 320
+      - name: image
+        label: Φωτογραφία (προαιρετική)
+        type: image
+      - name: image_alt
+        label: Περιγραφή φωτογραφίας
+        type: string
+        description: "Σύντομη περιγραφή για επισκέπτες που χρησιμοποιούν αναγνώστη οθόνης"
+      - name: content
+        label: Πλήρες περιεχόμενο
+        type: rich-text
+        required: true
+        options:
+          format: html
+      - name: label
+        label: Ετικέτα
+        type: string
+      - name: published
+        label: Δημοσιευμένη
+        type: boolean
+        required: true
+
+  - name: activities
+    label: Δράσεις
+    type: file
+    path: dist/content/activities.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: slug
+        label: Σύντομο όνομα συνδέσμου
+        type: string
+        required: true
+        description: "Μόνο λατινικά πεζά γράμματα, αριθμοί και παύλες (π.χ. giorti-anoixis)"
+        pattern: "^[a-z0-9-]+$"
+      - name: title
+        label: Τίτλος
+        type: string
+        required: true
+      - name: date
+        label: Ημερομηνία
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: Σύντομο κείμενο
+        type: text
+        required: true
+        options:
+          maxlength: 320
+      - name: image
+        label: Φωτογραφία
+        type: image
+        required: true
+      - name: image_alt
+        label: Περιγραφή φωτογραφίας
+        type: string
+        required: true
+        description: "Σύντομη περιγραφή για επισκέπτες που χρησιμοποιούν αναγνώστη οθόνης"
+      - name: content
+        label: Πλήρες περιεχόμενο
+        type: rich-text
+        required: true
+        options:
+          format: html
       - name: label
         label: Ετικέτα
         type: string

@@ -44,38 +44,66 @@ const formatGreekDate = (date) => {
   }).format(parsed);
 };
 
-const hydrateAnnouncements = (announcements) => {
-  const container = document.querySelector('[data-cms-list="announcements"]');
-  if (!container || !Array.isArray(announcements)) return;
+const createContentCard = (item, type) => {
+  const link = document.createElement('a');
+  link.className = `content-card ${type === 'activity' ? 'activity-card' : 'news-item'}`;
+  link.href = `${type === 'activity' ? 'activity' : 'announcement'}.html?slug=${encodeURIComponent(item.slug || '')}`;
+  link.setAttribute('aria-label', `${item.title || 'Περιεχόμενο'} — διαβάστε περισσότερα`);
 
-  const published = announcements
+  if (item.image) {
+    const image = document.createElement('img');
+    image.className = 'content-card-image';
+    image.src = normalizeAssetPath(item.image);
+    image.alt = item.image_alt || '';
+    image.loading = 'lazy';
+    link.append(image);
+  }
+
+  const body = document.createElement('span');
+  body.className = 'content-card-body';
+
+  const time = document.createElement('time');
+  time.dateTime = item.date || '';
+  time.textContent = formatGreekDate(item.date || '');
+
+  const title = document.createElement('h3');
+  title.textContent = item.title || '';
+
+  const summary = document.createElement('span');
+  summary.className = 'content-card-summary';
+  summary.textContent = item.summary || '';
+
+  body.append(time, title, summary);
+  if (item.label) {
+    const label = document.createElement('span');
+    label.className = 'sample-label';
+    label.textContent = item.label;
+    body.append(label);
+  }
+
+  const readMore = document.createElement('span');
+  readMore.className = 'read-more';
+  readMore.textContent = 'Διαβάστε περισσότερα →';
+  body.append(readMore);
+  link.append(body);
+  return link;
+};
+
+const hydrateContentList = (items, listName, type) => {
+  const container = document.querySelector(`[data-cms-list="${listName}"]`);
+  if (!container || !Array.isArray(items)) return;
+
+  const published = items
     .filter((item) => item && item.published !== false)
     .sort((a, b) => String(b.date).localeCompare(String(a.date)));
-  if (!published.length) return;
+  if (!published.length) {
+    const empty = document.createElement('p');
+    empty.textContent = type === 'activity' ? 'Δεν υπάρχουν ακόμη δημοσιευμένες δράσεις.' : 'Δεν υπάρχουν ακόμη δημοσιευμένες ανακοινώσεις.';
+    container.replaceChildren(empty);
+    return;
+  }
 
-  container.replaceChildren(...published.map((announcement) => {
-    const article = document.createElement('article');
-    article.className = 'news-item';
-
-    const time = document.createElement('time');
-    time.dateTime = announcement.date || '';
-    time.textContent = formatGreekDate(announcement.date || '');
-
-    const title = document.createElement('h3');
-    title.textContent = announcement.title || '';
-
-    const summary = document.createElement('p');
-    summary.textContent = announcement.summary || '';
-
-    article.append(time, title, summary);
-    if (announcement.label) {
-      const label = document.createElement('span');
-      label.className = 'sample-label';
-      label.textContent = announcement.label;
-      article.append(label);
-    }
-    return article;
-  }));
+  container.replaceChildren(...published.map((item) => createContentCard(item, type)));
 };
 
 Promise.all([
@@ -86,10 +114,15 @@ Promise.all([
   fetch('content/announcements.json', { cache: 'no-store' }).then((response) => {
     if (!response.ok) throw new Error('Δεν φορτώθηκαν οι ανακοινώσεις.');
     return response.json();
+  }),
+  fetch('content/activities.json', { cache: 'no-store' }).then((response) => {
+    if (!response.ok) throw new Error('Δεν φορτώθηκαν οι δράσεις.');
+    return response.json();
   })
-]).then(([site, announcements]) => {
+]).then(([site, announcements, activities]) => {
   hydrateSiteContent(site);
-  hydrateAnnouncements(announcements);
+  hydrateContentList(announcements, 'announcements', 'announcement');
+  hydrateContentList(activities, 'activities', 'activity');
 }).catch((error) => {
   console.warn('Pages CMS content fallback:', error.message);
 });
