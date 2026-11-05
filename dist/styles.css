@@ -8,7 +8,7 @@
   --green-dark:#075d42;
   --ink:#202029;
   --paper:#fffdf8;
-  --pattern:url("assets/kindergarten-pattern.png");
+  --pattern:url("assets/kindergarten-pattern.webp");
   --gutter:clamp(20px,5vw,78px);
   --max:1280px;
 }
