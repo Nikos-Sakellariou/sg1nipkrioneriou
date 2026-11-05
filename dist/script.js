@@ -20,6 +20,9 @@ const hydrateSiteContent = (site) => {
   document.querySelectorAll('[data-cms="email"]').forEach((link) => {
     if (site.email) link.href = `mailto:${site.email}`;
   });
+  document.querySelectorAll('[data-cms-mail="association_email"]').forEach((link) => {
+    if (site.association_email) link.href = `mailto:${site.association_email}`;
+  });
 
   const heroImage = document.querySelector('[data-cms-image="hero_image"]');
   if (heroImage && site.hero_image) heroImage.src = normalizeAssetPath(site.hero_image);
@@ -33,7 +36,7 @@ const hydrateSiteContent = (site) => {
     }));
   }
 
-  window.cmsSiteEmail = site.email || window.cmsSiteEmail;
+  window.cmsSiteEmail = site.association_email || window.cmsSiteEmail;
 };
 
 const formatGreekDate = (date) => {
@@ -160,7 +163,7 @@ form.addEventListener('submit', (event) => {
   const data = new FormData(form);
   const subject = encodeURIComponent(`Μήνυμα ιστοσελίδας από ${data.get('name')}`);
   const body = encodeURIComponent(`Όνομα: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`);
-  status.textContent = 'Ανοίγει η εφαρμογή email προς τη σχολική μονάδα.';
+  status.textContent = 'Ανοίγει η εφαρμογή email προς τον Σύλλογο.';
   const recipient = window.cmsSiteEmail || 'syllogosgoneon1nipkryoneriou@gmail.com';
   window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
 });

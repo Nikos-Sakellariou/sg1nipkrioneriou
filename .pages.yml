@@ -37,7 +37,11 @@ content:
         type: string
         required: true
       - name: email
-        label: Email
+        label: Email σχολείου
+        type: string
+        required: true
+      - name: association_email
+        label: Email Συλλόγου
         type: string
         required: true
       - name: address
