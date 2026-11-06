@@ -10,6 +10,31 @@ const setCmsText = (name, value) => {
 
 const normalizeAssetPath = (path) => path.startsWith('/') ? path.slice(1) : path;
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let revealObserver = null;
+
+const observeReveal = (element, delay = Number(element.dataset.revealDelay || 0)) => {
+  element.style.setProperty('--reveal-delay', `${delay}ms`);
+  if (!revealObserver || reducedMotion.matches) {
+    element.classList.add('is-visible');
+    return;
+  }
+  revealObserver.observe(element);
+};
+
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: .08, rootMargin: '0px 0px -100px 0px' });
+}
+
+document.documentElement.classList.add('reveal-ready');
+document.querySelectorAll('[data-reveal]').forEach((element) => observeReveal(element));
+
 const hydrateSiteContent = (site) => {
   Object.entries(site).forEach(([name, value]) => setCmsText(name, value));
 
@@ -29,11 +54,15 @@ const hydrateSiteContent = (site) => {
 
   const goals = document.querySelector('[data-cms-list="goals"]');
   if (goals && Array.isArray(site.goals) && site.goals.length) {
-    goals.replaceChildren(...site.goals.map((goal) => {
+    const goalItems = site.goals.map((goal, index) => {
       const item = document.createElement('li');
       item.textContent = goal;
+      item.dataset.reveal = '';
+      item.dataset.revealDelay = String(index * 60);
       return item;
-    }));
+    });
+    goals.replaceChildren(...goalItems);
+    goalItems.forEach((item) => observeReveal(item));
   }
 
   window.cmsSiteEmail = site.association_email || window.cmsSiteEmail;
@@ -106,7 +135,14 @@ const hydrateContentList = (items, listName, type) => {
     return;
   }
 
-  container.replaceChildren(...published.map((item) => createContentCard(item, type)));
+  const cards = published.map((item, index) => {
+    const card = createContentCard(item, type);
+    card.dataset.reveal = 'card';
+    card.dataset.revealDelay = String(Math.min(index * 70, 210));
+    return card;
+  });
+  container.replaceChildren(...cards);
+  cards.forEach((card) => observeReveal(card));
 };
 
 Promise.all([
@@ -140,20 +176,6 @@ siteNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', (
   menuButton.setAttribute('aria-expanded', 'false');
   siteNav.classList.remove('is-open');
 }));
-
-const revealItems = document.querySelectorAll('[data-reveal]');
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: .12 });
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
-}
 
 const form = document.querySelector('#contact-form');
 const status = form.querySelector('.form-status');
