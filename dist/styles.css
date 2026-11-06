@@ -84,7 +84,7 @@ h3 { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.15; }
 
 .association { background:var(--blue); color:#fff; }
 .association::before { opacity:.16; filter:brightness(0) invert(1); mix-blend-mode:soft-light; }
-.association-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(50px,8vw,130px); }
+.association-grid { display:grid; grid-template-columns:.9fr 1.2fr; gap:clamp(50px,8vw,130px); }
 .association-intro { max-width:34ch; font-size:1.3rem; font-weight:700; }
 .truth-note { margin-top:35px; padding:22px; border-radius:14px; background:rgba(255,255,255,.16); }
 .goals { display:grid; gap:20px; margin:0; padding:0; list-style:none; }
