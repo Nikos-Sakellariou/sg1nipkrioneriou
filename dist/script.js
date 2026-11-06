@@ -179,13 +179,31 @@ siteNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', (
 
 const form = document.querySelector('#contact-form');
 const status = form.querySelector('.form-status');
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
-  const data = new FormData(form);
-  const subject = encodeURIComponent(`Μήνυμα ιστοσελίδας από ${data.get('name')}`);
-  const body = encodeURIComponent(`Όνομα: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`);
-  status.textContent = 'Ανοίγει η εφαρμογή email προς τον Σύλλογο.';
-  const recipient = window.cmsSiteEmail || 'syllogosgoneon1nipkryoneriou@gmail.com';
-  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalLabel = submitButton.textContent;
+  submitButton.disabled = true;
+  submitButton.textContent = 'Αποστολή…';
+  status.textContent = 'Το μήνυμα αποστέλλεται…';
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+    const result = await response.json();
+    if (!response.ok || !result.success) throw new Error('Submission failed');
+
+    form.reset();
+    status.textContent = 'Το μήνυμά σας στάλθηκε. Ευχαριστούμε!';
+  } catch (error) {
+    status.textContent = 'Δεν ήταν δυνατή η αποστολή. Παρακαλώ δοκιμάστε ξανά.';
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = originalLabel;
+  }
 });

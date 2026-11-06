@@ -127,14 +127,17 @@
         <h2 id="contact-title" data-cms="contact_title">Ας μιλήσουμε</h2>
         <p data-cms="contact_text">Μοιραστείτε μαζί μας τις σκέψεις, τις ιδέες, τους προβληματισμούς σας.</p>
       </div>
-      <form id="contact-form" data-reveal>
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" data-reveal>
+        <input type="hidden" name="access_key" value="edd61c78-35fe-428e-845f-fad5e9f231fc">
+        <input type="hidden" name="subject" value="Νέο μήνυμα από την ιστοσελίδα του Συλλόγου">
+        <input type="hidden" name="from_name" value="Ιστοσελίδα Συλλόγου Γονέων 1ου Νηπιαγωγείου Κρυονερίου">
         <label for="name">Όνομα</label>
         <input id="name" name="name" autocomplete="name" required>
         <label for="email">Email</label>
         <input id="email" name="email" type="email" autocomplete="email" required>
         <label for="message">Μήνυμα</label>
         <textarea id="message" name="message" rows="5" required></textarea>
-        <button type="submit">Άνοιγμα στο email</button>
+        <button type="submit">Αποστολή μηνύματος</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
     </section>
