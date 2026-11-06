@@ -177,6 +177,21 @@ siteNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', (
   siteNav.classList.remove('is-open');
 }));
 
+const backToTop = document.querySelector('.back-to-top');
+const updateBackToTop = () => {
+  const visible = window.scrollY > 240;
+  backToTop.classList.toggle('is-visible', visible);
+  backToTop.setAttribute('aria-hidden', String(!visible));
+  backToTop.tabIndex = visible ? 0 : -1;
+};
+
+window.addEventListener('scroll', updateBackToTop, { passive: true });
+updateBackToTop();
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+});
+
 const form = document.querySelector('#contact-form');
 const status = form.querySelector('.form-status');
 form.addEventListener('submit', async (event) => {
