@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikos-sakellariou.github.io/sg1nipkrioneriou/sitemap.xml

@@ -137,10 +137,29 @@ h3 { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.15; }
 .contact form { display:grid; grid-template-columns:1fr 1fr; gap:12px 18px; padding:40px; border-radius:16px; background:#fff2db; }
 .contact label { font-weight:800; }
 .contact input,.contact textarea { width:100%; padding:13px 14px; border:2px solid var(--ink); border-radius:10px; background:#fff; color:var(--ink); }
-.contact textarea,.contact button,.form-status { grid-column:1/-1; }
+.contact textarea,.contact button,.form-privacy,.form-status { grid-column:1/-1; }
 .contact button { min-height:52px; border:0; border-radius:999px; background:var(--coral); color:#fff; font-weight:800; cursor:pointer; }
 .contact button:hover { background:var(--coral-dark); }
+.form-privacy { margin:2px 0 0; color:#544f4b; font-size:.82rem; line-height:1.5; }
+.form-privacy a { color:var(--coral-dark); font-weight:800; }
 .form-status { min-height:1.4em; margin:0; }
+
+.legal-page { background:var(--paper); }
+.legal-header { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:96px; padding:14px var(--gutter); background:#fff; border-bottom:1px solid #eadfce; }
+.legal-header img { width:150px; }
+.legal-header a:last-child { font-weight:800; }
+.legal-main { width:min(100%,920px); margin-inline:auto; padding:80px var(--gutter) 120px; }
+.legal-main h1 { max-width:15ch; margin-bottom:20px; font-size:clamp(2.8rem,7vw,5.5rem); }
+.legal-updated { margin-bottom:48px; color:var(--green-dark); font-weight:800; }
+.legal-content { padding:clamp(28px,5vw,58px); border-radius:20px; background:#fff2db; }
+.legal-content h2 { margin-top:1.6em; margin-bottom:.55em; font-size:clamp(1.8rem,4vw,3rem); }
+.legal-content h2:first-child { margin-top:0; }
+.legal-content h3 { margin-top:1.5em; }
+.legal-content a { color:var(--coral-dark); font-weight:800; }
+.legal-content li + li { margin-top:.55em; }
+.legal-note { padding:18px 22px; border-left:5px solid var(--blue); background:#fff; }
+.legal-footer { padding:28px var(--gutter); background:var(--coral); color:#fff; text-align:center; }
+.legal-footer a { margin-inline:10px; font-weight:800; }
 
 .site-footer { position:relative; padding:80px var(--gutter) 26px; background:var(--coral); color:#fff; overflow:hidden; }
 .site-footer::before { content:""; position:absolute; inset:0; background-image:var(--pattern); background-size:500px; opacity:.08; filter:brightness(0) invert(1); pointer-events:none; }
@@ -152,6 +171,7 @@ h3 { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.15; }
 .footer-link svg { flex:0 0 auto; width:22px; height:22px; fill:currentColor; }
 .footer-link span { overflow-wrap:anywhere; font-size: 0.8em;}
 .footer-grid p { font-size:.9rem; }
+.footer-legal-title { display:block; margin-top:22px; font-size:.88rem; }
 .footer-mark { display:grid; place-items:center; min-height:150px; border-radius:20px; background:#fff; }
 .footer-mark span { display:grid; place-items:center; width:80px; height:80px; border-radius:18px; background:var(--yellow); color:var(--coral); font:800 2rem/1 "Nunito Sans",sans-serif; transform:rotate(-4deg); }
 .copyright { margin-top:65px; font-size:.78rem; }
@@ -197,7 +217,7 @@ h3 { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.15; }
   .people-layout { grid-template-columns:1fr; }
   .contact { padding:100px 22px; }
   .contact form { grid-template-columns:1fr; padding:28px 22px; }
-  .contact textarea,.contact button,.form-status { grid-column:auto; }
+  .contact textarea,.contact button,.form-privacy,.form-status { grid-column:auto; }
   .footer-grid { grid-template-columns:1fr 1fr; }
   .content-card { min-height:0; }
   .detail-shell { padding:60px 22px 100px; }

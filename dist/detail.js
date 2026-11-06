@@ -3,6 +3,7 @@ const contentType = document.body.dataset.contentType;
 const isActivity = contentType === 'activity';
 const source = isActivity ? 'content/activities.json' : 'content/announcements.json';
 const slug = new URLSearchParams(window.location.search).get('slug');
+const siteBase = 'https://nikos-sakellariou.github.io/sg1nipkrioneriou/';
 
 const normalizeAssetPath = (path) => String(path || '').replace(/^\//, '');
 const escapeHtml = (value) => String(value || '').replace(/[&<>\"]/g, (character) => ({
@@ -43,6 +44,44 @@ const sanitizeHtml = (html) => {
   return parsed.body.innerHTML;
 };
 
+const setMeta = (selector, attribute, value) => {
+  let element = document.querySelector(selector);
+  if (!element) {
+    element = document.createElement(selector.startsWith('link') ? 'link' : 'meta');
+    const nameMatch = selector.match(/\[name="([^"]+)"\]/);
+    const propertyMatch = selector.match(/\[property="([^"]+)"\]/);
+    const relMatch = selector.match(/\[rel="([^"]+)"\]/);
+    if (nameMatch) element.setAttribute('name', nameMatch[1]);
+    if (propertyMatch) element.setAttribute('property', propertyMatch[1]);
+    if (relMatch) element.setAttribute('rel', relMatch[1]);
+    document.head.append(element);
+  }
+  element.setAttribute(attribute, value);
+};
+
+const setStructuredData = (item, canonical, imageUrl) => {
+  const structuredData = document.createElement('script');
+  structuredData.type = 'application/ld+json';
+  structuredData.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': isActivity ? 'Article' : 'NewsArticle',
+    headline: item.title,
+    description: item.summary,
+    datePublished: item.date,
+    dateModified: item.date,
+    inLanguage: 'el-GR',
+    mainEntityOfPage: canonical,
+    image: imageUrl || undefined,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Σύλλογος Γονέων και Κηδεμόνων 1ου Νηπιαγωγείου Κρυονερίου',
+      url: siteBase,
+      logo: { '@type': 'ImageObject', url: `${siteBase}assets/syllogos-logo.png` }
+    }
+  });
+  document.head.append(structuredData);
+};
+
 const renderNotFound = () => {
   document.title = 'Το περιεχόμενο δεν βρέθηκε';
   detailRoot.innerHTML = '<h1>Η σελίδα δεν είναι διαθέσιμη</h1><p>Η καταχώριση μπορεί να έχει αφαιρεθεί ή ο σύνδεσμος να μην είναι σωστός.</p><a class="button" href="index.html">Επιστροφή στην αρχική</a>';
@@ -57,7 +96,16 @@ fetch(source, { cache: 'no-store' })
     const item = Array.isArray(items) ? items.find((entry) => entry.slug === slug && entry.published !== false) : null;
     if (!item) return renderNotFound();
 
-    document.title = `${item.title} | 1ο Νηπιαγωγείο Κρυονερίου`;
+    const canonical = `${siteBase}${isActivity ? 'activity' : 'announcement'}.html?slug=${encodeURIComponent(item.slug)}`;
+    const imageUrl = item.image ? new URL(normalizeAssetPath(item.image), siteBase).href : `${siteBase}assets/syllogos-logo.png`;
+    document.title = `${item.title} | Σύλλογος Γονέων 1ου Νηπιαγωγείου Κρυονερίου`;
+    setMeta('meta[name="description"]', 'content', item.summary || 'Ενημέρωση από τον Σύλλογο Γονέων του 1ου Νηπιαγωγείου Κρυονερίου.');
+    setMeta('meta[property="og:title"]', 'content', document.title);
+    setMeta('meta[property="og:description"]', 'content', item.summary || '');
+    setMeta('meta[property="og:url"]', 'content', canonical);
+    setMeta('meta[property="og:image"]', 'content', imageUrl);
+    setMeta('link[rel="canonical"]', 'href', canonical);
+    setStructuredData(item, canonical, imageUrl);
     const image = item.image
       ? `<figure class="detail-media"><img src="${escapeHtml(normalizeAssetPath(item.image))}" alt="${escapeHtml(item.image_alt)}"></figure>`
       : '';
